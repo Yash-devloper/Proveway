@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BOGO Offer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff;
+      margin: 40px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .heading {
+      font-size: 24px;
+      font-weight: bold;
+      color: #f75c8f;
+      margin-bottom: 30px;
+    }
+
+    .box {
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .box.active {
+      border-color: #f75c8f;
+      background-color: #fff0f5;
+    }
+
+    .title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #f75c8f;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .options {
+      display: none;
+      margin-top: 15px;
+    }
+
+    .box.active .options {
+      display: block;
+    }
+
+    .option-row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    select {
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #aaa;
+      width: 100%;
+    }
+
+    .label {
+      font-size: 14px;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    .option-row div {
+      flex: 1;
+    }
+
+    .footer {
+      margin-top: 30px;
+    }
+
+    .free-delivery {
+      color: #f75c8f;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+
+    .total {
+      margin-top: -26px;
+      font-size: 16px;
+      text-align: right;
+      margin-bottom: 20px;
+    }
+
+    .add-to-cart {
+      background-color: #f75c8f;
+      color: white;
+      border: none;
+      padding: 14px;
+      font-size: 16px;
+      width: 100%;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .add-to-cart:hover {
+      background-color: #e64878;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="heading">YAY! It's BOGO</div>
+
+    <!-- Box 1 -->
+    <div class="box" onclick="toggleBox(this, 10, 1)">
+      <div class="title">1 Unit - 10% Off</div>
+      <div class="price">$10.00 USD <s style="color:#aaa;">$24.00 USD</s></div>
+      <div class="options">
+        <div class="option-row">
+          <div>
+            <div class="label">Size</div>
+            <select>
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+            </select>
+          </div>
+          <div>
+            <div class="label">Colour</div>
+            <select>
+              <option>Black</option>
+              <option>White</option>
+              <option>Red</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Box 2 -->
+    <div class="box" onclick="toggleBox(this, 18, 2)">
+      <div class="title">2 Units - 20% Off</div>
+      <div class="price">$18.00 USD <s style="color:#aaa;">$48.00 USD</s></div>
+      <div class="options">
+        <div class="option-row">
+          <div>
+            <div class="label">Size #1</div>
+            <select>
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+            </select>
+          </div>
+          <div>
+            <div class="label">Colour #1</div>
+            <select>
+              <option>Black</option>
+              <option>White</option>
+              <option>Red</option>
+            </select>
+          </div>
+        </div>
+        <div class="option-row">
+          <div>
+            <div class="label">Size #2</div>
+            <select>
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+            </select>
+          </div>
+          <div>
+            <div class="label">Colour #2</div>
+            <select>
+              <option>Black</option>
+              <option>White</option>
+              <option>Red</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Box 3 -->
+    <div class="box" onclick="toggleBox(this, 24, 3)">
+      <div class="title">3 Units - 30% Off</div>
+      <div class="price">$24.00 USD <s style="color:#aaa;">$72.00 USD</s></div>
+      <div class="options">
+        <div class="option-row">
+          <div>
+            <div class="label">Size #1</div>
+            <select>
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+            </select>
+          </div>
+          <div>
+            <div class="label">Colour #1</div>
+            <select>
+              <option>Black</option>
+              <option>White</option>
+              <option>Red</option>
+            </select>
+          </div>
+        </div>
+        <div class="option-row">
+          <div>
+            <div class="label">Size #2</div>
+            <select>
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+            </select>
+          </div>
+          <div>
+            <div class="label">Colour #2</div>
+            <select>
+              <option>Black</option>
+              <option>White</option>
+              <option>Red</option>
+            </select>
+          </div>
+        </div>
+        <div class="option-row">
+          <div>
+            <div class="label">Size #3</div>
+            <select>
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+            </select>
+          </div>
+          <div>
+            <div class="label">Colour #3</div>
+            <select>
+              <option>Black</option>
+              <option>White</option>
+              <option>Red</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="free-delivery">Free Delivery</div>
+      <div class="total" id="totalDisplay">Total : $0.00 USD</div>
+      <button class="add-to-cart" onclick="addToCart()">+ Add to Cart</button>
+    </div>
+  </div>
+
+  <script>
+    let selectedPrice = 0;
+
+    function toggleBox(selectedBox, price, unitCount) {
+      document.querySelectorAll('.box').forEach(box => {
+        box.classList.remove('active');
+      });
+
+      selectedBox.classList.add('active');
+      selectedPrice = price;
+      document.getElementById("totalDisplay").innerText = `Total : $${price.toFixed(2)} USD`;
+    }
+
+    function addToCart() {
+      if (selectedPrice > 0) {
+        alert("Added to cart successfully!\nTotal: $" + selectedPrice.toFixed(2));
+      } else {
+        alert("Please select a product option first.");
+      }
+    }
+  </script>
+</body>
+</html>
